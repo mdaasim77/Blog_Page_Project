@@ -1,0 +1,84 @@
+#navbar-top {
+  margin: 0;
+  padding: 0;
+}
+#nav-item {
+  font-weight: 600;
+}
+#nav-item a {
+  color: #000000;
+}
+#nav-item a:hover {
+  color: #0f8807;
+}
+#navbar {
+  background-color: #ffffff;
+}
+#navbar button:hover {
+  color: #fff;
+  font-weight: 600;
+  background-color: #0f8807;
+}
+#navbar button {
+  border: 2px solid #0f8807;
+  font-weight: 600;
+}
+.imagebgc {
+  margin-top: 70px;
+  background-image: url("assets/office.jpg");
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+#blogtext {
+  font-size: 60px;
+  border-top: 5px solid #0f8807;
+  width: 75px;
+  color: #000000;
+}
+
+/* ........................................................................................................................................................................Login page Start here 
+..................................................................................... */
+
+#logincontainer {
+  height: 100%;
+  margin-top: 10%;
+}
+
+#loginform {
+  width: 30vw;
+  background-color: #d0d0d0;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* .......................................................................................................................................add blog button css ......................................................................................................................... */
+
+form {
+  border: 1px solid gray;
+  padding: 50px;
+  border-radius: 12px;
+}
+.design {
+  margin-bottom: 50px;
+  height: 30vh;
+}
+.labeldesign {
+  font-size: 18px;
+  font-weight: 700;
+  color: #5c5757ad;
+}
+
+::placeholder {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5c5757ad !important;
+}
+#blogh2 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+  color: #151414a9;
+}
