@@ -32,7 +32,7 @@ export default function AddBlogCategory() {
       );
       const categoryJsonResponse = await categoryResponse.json();
 
-      console.log("Category API response", categoryJsonResponse);
+      // console.log("Category API response", categoryJsonResponse);
 
       if (categoryResponse.ok) {
         alert("Category Submitted Succesfully");
