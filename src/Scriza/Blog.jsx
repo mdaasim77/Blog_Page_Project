@@ -6,11 +6,6 @@ export default function Blog() {
   const navigate = useNavigate();
   const [IsLogin, setIsLogin] = useState(false);
 
-  // const [image, setImage] = useState(null);
-  // const [title, setTitle] = useState("");
-  // const [date, setDate] = useState("");
-  // const [Status, setStatus] = useState("");
-  // const [content, setContent] = useState("");
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -20,18 +15,17 @@ export default function Blog() {
     }
 
     const fetchBlogApi = async () => {
-      const slug = "djfakf-kn-dadafa";
       try {
         const response = await axios.get(
-          `https://thetechtraining.in/back/api/blogs/${slug}`,
+          `http://192.168.20.156:5000/api/admin/blogs`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }
         );
-        console.log(`fetched data of blog api is`, response.data);
-        setBlogs(response.data.blogs);
+        console.log(`fetched data of blog api is=======`, response.data);
+        setBlogs(response.data);
       } catch (error) {
         console.log("Getting this error", error);
       }
@@ -148,7 +142,11 @@ export default function Blog() {
         <div className="container row  col-8  g-2 ">
           {blogs?.map((blog) => (
             <div key={blog._id} className="card  col-md-6 col-xs-12">
-              <img src={blog.featureImage} className="card-img-top" alt="..." />
+              <img
+                src={`http://192.168.20.156:5000/${blog.featureImage}`}
+                className="card-img-top"
+                alt="..."
+              />
               <div className="card-body">
                 <h5 className="card-title">Card title:{blog.title}</h5>
                 <div className="d-flex justify-content-between mx-3 text-justify">
