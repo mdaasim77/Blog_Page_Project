@@ -148,7 +148,9 @@ export default function Blog() {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">Card title:{blog.title}</h5>
+                <h5 className="card-title">
+                  <b>Card title:</b> {blog.title}
+                </h5>
                 <div className="d-flex justify-content-between mx-3 text-justify">
                   <p className="card-text ">Date: {blog.createdAt}</p>
                   <p className="card-text">
@@ -157,6 +159,12 @@ export default function Blog() {
                   </p>
                 </div>
                 <p className="card-text">{blog.content}</p>
+              </div>
+              <div className="blogCardBtn d-flex justify-content-around ">
+                <button className="mb-3 btn btn-outline-success">
+                  Edit Blog
+                </button>
+                <button className="mb-3 btn btn-outline-danger">Delete</button>
               </div>
             </div>
           ))}
