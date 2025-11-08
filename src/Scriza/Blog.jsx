@@ -161,7 +161,12 @@ export default function Blog() {
                 <p className="card-text">{blog.content}</p>
               </div>
               <div className="blogCardBtn d-flex justify-content-around ">
-                <button className="mb-3 btn btn-outline-success">
+                <button
+                  onClick={() => {
+                    navigate("/edit-blog");
+                  }}
+                  className="mb-3 btn btn-outline-success"
+                >
                   Edit Blog
                 </button>
                 <button className="mb-3 btn btn-outline-danger">Delete</button>

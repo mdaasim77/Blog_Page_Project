@@ -13,6 +13,7 @@ import {
 import Register_page from "./Scriza/Register_page.jsx";
 import AddBlog from "./Scriza/AddBlog.jsx";
 import AddBlogCategory from "./Scriza/AddBlogCategory.jsx";
+import EditBlog from "./Scriza/EditBlog.jsx";
 
 createRoot(document.getElementById("root")).render(
   <>
@@ -24,6 +25,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/register" element={<Register_page />}></Route>
         <Route path="/add-blog" element={<AddBlog />}></Route>
         <Route path="/add-category" element={<AddBlogCategory />}></Route>
+        <Route path="/edit-blog" element={<EditBlog />}></Route>
       </Routes>
     </Router>
   </>
