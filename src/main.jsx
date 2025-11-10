@@ -25,7 +25,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/register" element={<Register_page />}></Route>
         <Route path="/add-blog" element={<AddBlog />}></Route>
         <Route path="/add-category" element={<AddBlogCategory />}></Route>
-        <Route path="/edit-blog" element={<EditBlog />}></Route>
+        <Route path="/edit-blog/:id" element={<EditBlog />}></Route>
       </Routes>
     </Router>
   </>

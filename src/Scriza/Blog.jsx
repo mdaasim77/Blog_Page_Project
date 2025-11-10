@@ -137,7 +137,7 @@ export default function Blog() {
         <h6 className="pt-5">Home/Blog</h6>
       </div>
       <div className=" d-flex">
-        {/* .............................first card of blog........................... */}
+        {/* .........................................................................................................................................................................first card of blog........................... ....................................................................................................................................................................................................*/}
 
         <div className="container row  col-8  g-2 ">
           {blogs?.map((blog) => (
@@ -163,7 +163,7 @@ export default function Blog() {
               <div className="blogCardBtn d-flex justify-content-around ">
                 <button
                   onClick={() => {
-                    navigate("/edit-blog");
+                    navigate(`/edit-blog/${blog._id}`);
                   }}
                   className="mb-3 btn btn-outline-success"
                 >
