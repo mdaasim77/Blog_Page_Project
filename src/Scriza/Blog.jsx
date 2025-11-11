@@ -3,36 +3,64 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Blog() {
+  const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const [IsLogin, setIsLogin] = useState(false);
 
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
     if (token) {
       setIsLogin(true);
     }
 
-    const fetchBlogApi = async () => {
-      try {
-        const response = await axios.get(
-          `http://192.168.20.156:5000/api/admin/blogs`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        console.log(`fetched data of blog api is=======`, response.data);
-        setBlogs(response.data);
-      } catch (error) {
-        console.log("Getting this error", error);
-      }
-    };
-
     fetchBlogApi();
   }, []);
+  const fetchBlogApi = async () => {
+    try {
+      const response = await axios.get(
+        `http://192.168.20.156:5000/api/admin/blogs`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(`fetched data of blog api is=======`, response.data);
+      setBlogs(response.data);
+    } catch (error) {
+      console.log("Getting this error", error);
+    }
+  };
+
+  {
+    /* .........................................................................................................................................delete btn function........................................................... ....................................................................................................................................................................................................*/
+  }
+
+  const deleteBlog = async (blogId) => {
+    if (!window.confirm("Are you sure you want to delete this blog?")) {
+      return; // user cancelled
+    }
+
+    try {
+      const response = await axios.delete(
+        `http://192.168.20.156:5000/api/admin/blogs/${blogId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      alert("Blog deleted successfully");
+      fetchBlogApi();
+
+      // setBlogs((prevBlogs) => prevBlogs.filter((b) => b._id !== blogId));
+    } catch (error) {
+      console.log("Delete error:", error);
+      alert("Failed to delete blog");
+    }
+  };
 
   return (
     <>
@@ -169,7 +197,12 @@ export default function Blog() {
                 >
                   Edit Blog
                 </button>
-                <button className="mb-3 btn btn-outline-danger">Delete</button>
+                <button
+                  onClick={() => deleteBlog(blog._id)}
+                  className="mb-3 btn btn-outline-danger"
+                >
+                  Delete
+                </button>
               </div>
             </div>
           ))}
