@@ -173,6 +173,7 @@ export default function Blog() {
               <img
                 src={`http://192.168.20.156:5000/${blog.featureImage}`}
                 className="card-img-top"
+                style={{ height: "400px" }}
                 alt="..."
               />
               <div className="card-body">
